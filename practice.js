@@ -1,23 +1,103 @@
-// SELECTORS
-/* this function utilizes selectors and simply changes "Hello World" to say "Hello Mass"
-var hello = "Hello Mass";
-var world = document.getElementById("world");
-world.textContent = hello;
-*/
 
-
-// EACH
-/* this function first puts the elements in the list into an array. Then it loops through each element in the array and changes them to "hello"
-*/
-function myFunction() {
-    var a = [document.getElementById("world"), document.getElementById("planet"), document.getElementById("country"), document.getElementById("state"), document.getElementById("person")];
-    var b = "hello";
-    for(i=0; i<5; i++){
-        a[i].textContent = b;
-    }
+//practicing using objects, object-oriented style
+function Hotel(name, price, rooms) {
+    this.name = name;
+    this.price = price;
+    this.rooms = rooms;
 }
 
+/*literal notation
+var Hotel = {
+    name: garden,
+    price: 300,
+    rooms: 200
+}; */
 
-// CHECKLIST
-/* Creates a to-do list */
+var quayHotel = new Hotel("quay", 100, 50);
+var parkHotel = new Hotel("park", 200, 100);
+
+console.log(quayHotel.name);
+console.log(parkHotel.price);
+
+//simple code generator that takes in a string. Takes every consanant in the string and duplicates and puts an o in the middle. For example tom becomes totomom.
+function codeGen(word) {
+    var codeWord = word;
+    var newWord = "";
+    for(i=0; i<word.length; i++) {
+        if (codeWord.charAt(i) == "a" || codeWord.charAt(i) == "e" || codeWord.charAt(i) == "i" || codeWord.charAt(i) == "o" || codeWord.charAt(i) == "u") {
+            newWord = newWord + codeWord.charAt(i);
+        }
+        else if (codeWord.charAt(i) == codeWord.charAt(i).toUpperCase) {
+            newWord = newWord + codeWord.charAt(i) + "o" + codeWord.charAt(i).toLowerCase;
+        }
+        else {
+            newWord = newWord + codeWord.charAt(i) + "o" + codeWord.charAt(i);
+        }
+    }
+    return newWord;
+    }    
+console.log(codeGen("Bill"));
+
+//anonymous functions
+(function(x) {
+    return x*x;
+})(5);
+
+
+//simple recursion of outputting factorial of a number
+function factorial(x) {
+    if (x==0 || x==1) {
+        return 1;
+    }
+    else {
+        return x * factorial(x-1);
+    }
+}
+console.log(factorial(3));
+
+
+//tried to use recursion to find range of numbers from a start to end point
+function range(x, y) {
+    var foo = [];
+    if (x == y || (x+1) == y) {
+        return "";
+    }
+    else { 
+}
+}
+
+//putting objects inside of an array
+var headphones = [
+    {cost:100, style:"in ear", sound:"warm"},
+    {cost:200, style:"on ear", sound:"crisp"},
+    {cost:300, style:"around ear", sound:"natural"}
+    ]
+console.log(headphones[1].style);
+
+//putting arrays inside of an object
+var HeadPhones = {
+    name: "hifi",
+    sound: ["warm", "crisp", "natural"],
+    cost: 400
+};
+console.log(HeadPhones.sound[1]);
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
