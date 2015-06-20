@@ -87,24 +87,21 @@ var mew = split.split("");
 console.log(mew[1]);
 
 
+
+
 //Making numbers palindromic
-function palindrom(x) {
-    var boo = x;
-    var count = 0;
-    var foo = x.toString;
-    var splitFoo = foo.split("");
-    for (i=0; i<foo.length-1; i++){
-        if (splitFoo[i] == splitFoo[i+1]){
-            count++;
-        }
+var answer;
+function palindrom(num) {
+    revNum = num.toString().split("").reverse().join("");
+    if (num == revNum) {
+        answer = revNum;
     }
-    if (count == foo.length) {
-        return x;
+    else {
+        palindrom(num + parseInt(revNum));
     }
-        
-    
-    
 }
+palindrom(24);
+alert(answer);
 
 
 
