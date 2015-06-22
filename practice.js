@@ -82,39 +82,29 @@ var HeadPhones = {
 };
 console.log(HeadPhones.sound[1]);
 
-
-//testing code
 var split = "bill";
 var mew = split.split("");
 console.log(mew[1]);
-var a = "5";
-var b = 121;
-if (b == parseInt((((b.toString()).split("")).reverse()).join("")) ) {
-    console.log("true");}
-else {
-    console.log("false");}
 
 
 //Making numbers palindromic
 function palindrom(x) {
     var boo = x;
-    var foo = x.toString();
+    var count = 0;
+    var foo = x.toString;
     var splitFoo = foo.split("");
-    if (parseInt(foo) == parseInt(((splitFoo.reverse()).join("")))) {       //figured out how to reverse
-        return foo;
-    }
-    else {
-        var mew = parseInt(foo) + parseInt(((splitFoo.reverse()).join("")));        //have to figure out the recursion
-        if (parseInt(foo) == parseInt(((splitFoo.reverse()).join("")))) {
-            return mew;
+    for (i=0; i<foo.length-1; i++){
+        if (splitFoo[i] == splitFoo[i+1]){
+            count++;
         }
     }
+    if (count == foo.length) {
+        return x;
+    }
+        
+    
+    
 }
-
-console.log(palindrom(24));  //function not executing says undefined
-
- 
-
 
 
 
