@@ -3,14 +3,21 @@
    
     <head>
     <meta charset="UTF-8">
-        <script type="text/javascript" src="practice.js"></script>  
     </head>
     
     
     <body>
-        <h1>Hello World!</h1>
-
-
-
+        <h1>To-Do List</h1>
+        <input id="enter" type="text" name="list">
+        <input type="submit" value="submit" onclick="addToList()">
+        <button type="button" onclick="removeLast()">Delete last one</button>
+        <button type="button" onclick="removeChecked()">Delete checked</button>
+        <ul id="to-do">
+            <!--   
+            <li><input type="checkbox">carrot</li>
+            <li><input type="checkbox">pumpkin</li>
+            <li><input type="checkbox">blueberry</li> -->
+        </ul>
+        <script type="text/javascript" src="practice.js"></script> 
     </body>
 </html>

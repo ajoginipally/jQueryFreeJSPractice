@@ -87,8 +87,7 @@ var mew = split.split("");
 console.log(mew[1]);
 
 
-
-
+/*
 //Making numbers palindromic
 var answer;
 function palindrom(num) {
@@ -102,6 +101,44 @@ function palindrom(num) {
 }
 palindrom(24);
 alert(answer);
+*/
+
+var list = document.getElementById('to-do');
+
+
+function addToList() {
+    var text = document.getElementById('enter').value;
+    var newItemEnd = document.createElement('li');
+    var newCheckEnd = document.createElement('input');
+    newCheckEnd.setAttribute('type', 'checkbox');
+    newCheckEnd.checked = false;
+    var newTextEnd = document.createTextNode(text);
+    newItemEnd.appendChild(newCheckEnd);
+    newItemEnd.appendChild(newTextEnd);
+    list.appendChild(newItemEnd);
+}
+
+function removeLast() {
+    var container = list;
+    container.removeChild(container.lastChild);    
+}
+
+var listQuery = document.getElementsByTagName('li');
+function removeChecked() {
+    var deleteNodes = [];
+    var container = list;
+    for (i=0; i<listQuery.length; i++) {
+        if (listQuery[i].firstChild.checked == true) {
+            deleteNodes.push(listQuery[i]);  
+        } 
+    }
+    for (i=0; i<deleteNodes.length; i++) {
+        container.removeChild(deleteNodes[i]);
+    }
+}
+
+
+
 
 
 
