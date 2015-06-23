@@ -111,21 +111,34 @@ function palindromeAnswer() {
 // TO-DO list that you can submit, delete last node, and delete checked nodes
 //region
 var list = document.getElementById('to-do');
-function addToList() {
-    var text = document.getElementById('enter').value;
-    var newItemEnd = document.createElement('li');
-    var newCheckEnd = document.createElement('input');
-    newCheckEnd.setAttribute('type', 'checkbox');
-    newCheckEnd.checked = false;
-    var newTextEnd = document.createTextNode(text);
-    newItemEnd.appendChild(newCheckEnd);
-    newItemEnd.appendChild(newTextEnd);
-    list.appendChild(newItemEnd);
+var items = [];
+
+//way to refresh list
+function renderList() {
+    list.innerHTML = '';
+    _.each(items, function(item){
+        var newItemEnd = document.createElement('li');
+        var newCheckEnd = document.createElement('input');
+        newCheckEnd.setAttribute('type', 'checkbox');
+        newCheckEnd.checked = false;
+        var newTextEnd = document.createTextNode(item);
+        newItemEnd.appendChild(newCheckEnd);
+        newItemEnd.appendChild(newTextEnd);
+        list.appendChild(newItemEnd); 
+    });
 }
 
+//add to the list
+function addToList() {
+    var text = document.getElementById('enter').value;
+    items.push(text);
+    renderList();   
+}
+
+//remove the last item from the list
 function removeLast() {
-    var container = list;
-    container.removeChild(container.lastChild);    
+    items.pop();
+    renderList();   
 }
 
 var listQuery = document.getElementsByTagName('li');
@@ -141,8 +154,19 @@ function removeChecked() {
         container.removeChild(deleteNodes[i]);
     }
 }
+
+//attempted to filter list but realized that they are strings
+/* function removeCheckedUnder() {
+    _.filter(items, function(item){
+        return item.firstChild.checked == false;  
+    });
+    renderList();
+} */
+ 
 //endregion
 
+var a = _.first([5,3,2]);
+console.log(a);
 
 
 
