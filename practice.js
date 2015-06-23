@@ -86,26 +86,31 @@ var split = "bill";
 var mew = split.split("");
 console.log(mew[1]);
 
-
-/*
 //Making numbers palindromic
 var answer;
-function palindrom(num) {
-    revNum = num.toString().split("").reverse().join("");
+function palindrome(num) {
+    revNum = num.toString().split('').reverse().join('');
     if (num == revNum) {
-        answer = revNum;
+        answer = num;
     }
     else {
-        palindrom(num + parseInt(revNum));
+        palindrome(num + parseInt(revNum));
     }
 }
-palindrom(24);
-alert(answer);
-*/
+palindrome(567);
+console.log(answer);
 
+function palindromeAnswer() {
+    var foo = document.getElementById('palin').value;
+    var boo = document.getElementById('palinAnswer');
+    palindrome(foo);
+    boo.innerHTML = 'Your palindrome is : ' + answer;
+}
+
+
+// TO-DO list that you can submit, delete last node, and delete checked nodes
+//region
 var list = document.getElementById('to-do');
-
-
 function addToList() {
     var text = document.getElementById('enter').value;
     var newItemEnd = document.createElement('li');
@@ -136,6 +141,7 @@ function removeChecked() {
         container.removeChild(deleteNodes[i]);
     }
 }
+//endregion
 
 
 
