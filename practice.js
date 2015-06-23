@@ -1,4 +1,4 @@
-
+/*
 //practicing using objects, object-oriented style
 function Hotel(name, price, rooms) {
     this.name = name;
@@ -6,12 +6,12 @@ function Hotel(name, price, rooms) {
     this.rooms = rooms;
 }
 
-/*literal notation
+literal notation
 var Hotel = {
     name: garden,
     price: 300,
     rooms: 200
-}; */
+}; 
 
 var quayHotel = new Hotel("quay", 100, 50);
 var parkHotel = new Hotel("park", 200, 100);
@@ -106,6 +106,8 @@ function palindromeAnswer() {
     palindrome(foo);
     boo.innerHTML = 'Your palindrome is : ' + answer;
 }
+
+*/
 
 
 // TO-DO list that you can submit, delete last node, and delete checked nodes
